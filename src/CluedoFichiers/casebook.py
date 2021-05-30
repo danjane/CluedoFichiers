@@ -29,7 +29,6 @@ class CaseBook:
         "chandelier",
         "revolver",
         "corde",
-        "matraque",
         "clef Anglaise",
         "poison",
         "fer à cheval"
