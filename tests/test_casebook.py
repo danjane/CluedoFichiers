@@ -27,7 +27,14 @@ def test_prochain_personnage():
     casebook.nouveau(1)
     assert casebook[0]["personnage"] == "Colonel Michael Moutarde"
 
+
 def test_normaliser_prochain():
     casebook = CaseBook(1)
     casebook.nouveau_normalise(0.9999)
     assert casebook[0]["personnage"] == casebook.personnages[-1]
+
+
+def test_deux_personnages():
+    casebook = CaseBook(2)
+    assert casebook[0]["personnage"] == "Mademoiselle Josephine Rose"
+    assert casebook[1]["personnage"] == "Colonel Michael Moutarde"
