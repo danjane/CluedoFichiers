@@ -1,2 +1,4 @@
 class Alibis:
-    pass
+
+    def __init__(self, casebook):
+        self.__casebook = casebook
