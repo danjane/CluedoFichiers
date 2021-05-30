@@ -33,3 +33,9 @@ def test_normaliser_prochain():
     cartes = Cartes(1, personnages)
     cartes.nouveau_normalise(0.9999)
     assert cartes[0] == personnages[-1]
+
+def test_deux_personnages():
+    cartes = Cartes(2, personnages)
+    assert cartes[0] == "Mademoiselle Josephine Rose"
+    assert cartes[1] == "Colonel Michael Moutarde"
+
