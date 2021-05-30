@@ -5,11 +5,11 @@ class Alibis:
 
     def __init__(self, casebook):
         self.__casebook = casebook
-        self.__size = self.__casebook.size-1
+        self.__size = self.__casebook.size - 1
         self.elements = self.build_elements()
         self.__indices = list(
             itertools.product(range(4), repeat=self.__size)
-            )
+        )
         self.clue_index = self.__indices[0]
 
     def build_elements(self):

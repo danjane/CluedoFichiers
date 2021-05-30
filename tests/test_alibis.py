@@ -24,7 +24,7 @@ def test_first_set_of_alibis():
 def test_clues_selection():
     casebook = CaseBook(2)
     alibis = Alibis(casebook)
-    assert alibis.clue_index == (0, )
+    assert alibis.clue_index == (0,)
 
 
 def test_new_clues_selection():
