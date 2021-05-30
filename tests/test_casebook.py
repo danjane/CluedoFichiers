@@ -33,6 +33,7 @@ def test_normaliser_prochain():
     casebook.nouveau_normalise(0.9999)
     assert casebook[0]["personnage"] == casebook.personnages_possibles[-1]
     assert casebook[0]["lieu"] == casebook.lieux_possibles[-1]
+    assert casebook[0]["arme"] == casebook.armes_possibles[-1]
 
 
 def test_deux_personnages():
@@ -45,3 +46,9 @@ def test_deux_lieux():
     casebook = CaseBook(2)
     assert casebook[0]["lieu"] == "la salle de billard"
     assert casebook[1]["lieu"] == "la salle de bal"
+
+
+def test_deux_armes():
+    casebook = CaseBook(2)
+    assert casebook[0]["arme"] == "poignard"
+    assert casebook[1]["arme"] == "chandelier"
