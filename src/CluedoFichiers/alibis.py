@@ -4,6 +4,7 @@ class Alibis:
         self.__casebook = casebook
         self.__size = self.__casebook.size
         self.elements = self.build_elements()
+        self.clue_index = [0]
 
     def build_elements(self):
         L = []
