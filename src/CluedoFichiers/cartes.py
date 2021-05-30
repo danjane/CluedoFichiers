@@ -17,3 +17,6 @@ class Cartes:
     def __getitem__(self, key):
         selected = self.__indices[self.__compteur]
         return selected[key]
+
+    def nouveau(self, pas):
+        self.__compteur = int(pas) % len(self.__indices)
