@@ -38,3 +38,9 @@ def test_deux_personnages():
     casebook = CaseBook(2)
     assert casebook[0]["personnage"] == "Mademoiselle Josephine Rose"
     assert casebook[1]["personnage"] == "Colonel Michael Moutarde"
+
+
+def test_deux_lieux():
+    casebook = CaseBook(2)
+    assert casebook[0]["lieu"] == "la salle de billard"
+    assert casebook[1]["lieu"] == "la salle de bal"

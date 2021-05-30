@@ -1,5 +1,6 @@
 from CluedoFichiers.cartes import Cartes
 
+
 class CaseBook:
     """ Ensemble de personnages, lieux et armes """
 
@@ -13,16 +14,28 @@ class CaseBook:
         "Professeur Peter Violet"
     ]
 
+    lieux_possibles = [
+        "la salle de billard",
+        "la salle de bal",
+        "la salle de bain",
+        "la chambre à coucher",
+        "le pavillon des invités",
+        "le jardin d'hiver",
+        "le bureau"
+    ]
+
     def __init__(self, size):
         self.size = size
         self.personnages = Cartes(self.size, self.personnages_possibles)
+        self.lieux = Cartes(self.size, self.lieux_possibles)
 
     def __setitem__(self, key, value):
         raise NotImplementedError
 
     def __getitem__(self, key):
         return {
-            "personnage": self.personnages[key]
+            "personnage": self.personnages[key],
+            "lieu": self.lieux[key]
         }
 
     def nouveau(self, pas):
