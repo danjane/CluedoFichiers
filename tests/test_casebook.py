@@ -22,18 +22,20 @@ def test_size():
     assert casebook.size == 1
 
 
-def test_prochain_personnage():
-    casebook = CaseBook(1)
-    casebook.nouveau(1)
-    assert casebook[0]["personnage"] == "Colonel Michael Moutarde"
-
-
 def test_normaliser_prochain():
     casebook = CaseBook(1)
     casebook.nouveau_normalise(0.9999)
     assert casebook[0]["personnage"] == casebook.personnages_possibles[-1]
     assert casebook[0]["lieu"] == casebook.lieux_possibles[-1]
     assert casebook[0]["arme"] == casebook.armes_possibles[-1]
+
+
+def test_normaliser_prochain100():
+    casebook = CaseBook(1)
+    casebook.nouveau_normalise([0.9999, 0, 0])
+    assert casebook[0]["personnage"] == casebook.personnages_possibles[-1]
+    assert casebook[0]["lieu"] == casebook.lieux_possibles[0]
+    assert casebook[0]["arme"] == casebook.armes_possibles[0]
 
 
 def test_deux_personnages():

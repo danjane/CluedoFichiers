@@ -51,12 +51,9 @@ class CaseBook:
             "arme": self.armes[key]
         }
 
-    def nouveau(self, pas):
-        self.personnages.nouveau(pas)
-        self.lieux.nouveau(pas)
-        self.armes.nouveau(pas)
-
     def nouveau_normalise(self, param):
-        self.personnages.nouveau_normalise(param)
-        self.lieux.nouveau_normalise(param)
-        self.armes.nouveau_normalise(param)
+        if isinstance(param, float):
+            param = [param]*3
+        self.personnages.nouveau_normalise(param[0])
+        self.lieux.nouveau_normalise(param[1])
+        self.armes.nouveau_normalise(param[2])
