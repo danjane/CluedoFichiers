@@ -8,7 +8,7 @@ class Cartes:
         self.possibles = possibles
         self.__indices = list(
             itertools.permutations(self.possibles, self.size)
-            )
+        )
         self.__compteur = 0
 
     def __setitem__(self, key, value):
