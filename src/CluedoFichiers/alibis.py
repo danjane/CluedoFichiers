@@ -38,4 +38,8 @@ class Alibis:
 
     def __getitem__(self, key):
         pers, lieu, arme = self.__casebook[key].values()
-        return [f"Alibi. {pers} était dans {lieu} avec {arme}."]
+        switcher = {
+            0: [f"Alibi. {pers} était dans {lieu} avec {arme}."],
+            1: [f"Alibi. {pers} était dans {lieu}.", f"Alibi. {pers} avait {arme}."]
+        }
+        return switcher[self.clue_index[key]]

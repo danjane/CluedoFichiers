@@ -60,3 +60,13 @@ def test_second_piste():
     casebook = CaseBook(3)
     alibis = Alibis(casebook)
     assert alibis[1] == ["Alibi. Colonel Michael Moutarde était dans la salle de bal avec le chandelier."]
+
+
+def test_one_complicated_piste():
+    casebook = CaseBook(2)
+    alibis = Alibis(casebook)
+    alibis.new_clue_index(1)
+    assert alibis[0] == [
+        "Alibi. Mademoiselle Josephine Rose était dans la salle de billard.",
+        "Alibi. Mademoiselle Josephine Rose avait le poignard."
+    ]
