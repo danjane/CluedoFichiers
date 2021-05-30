@@ -27,3 +27,7 @@ class Cartes:
             self.nouveau(pas)
         else:
             raise ValueError
+
+    def all(self):
+        selected = [self[x] for x in range(self.size)]
+        return [x for x in self.possibles if x in selected]
