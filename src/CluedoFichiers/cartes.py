@@ -20,3 +20,10 @@ class Cartes:
 
     def nouveau(self, pas):
         self.__compteur = int(pas) % len(self.__indices)
+
+    def nouveau_normalise(self, param):
+        if 0 <= param < 1:
+            pas = int(param * len(self.__indices))
+            self.nouveau(pas)
+        else:
+            raise ValueError

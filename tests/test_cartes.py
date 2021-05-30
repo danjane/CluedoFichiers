@@ -27,3 +27,9 @@ def test_prochaine_carte():
     cartes = Cartes(1, personnages)
     cartes.nouveau(1)
     assert cartes[0] == "Colonel Michael Moutarde"
+
+
+def test_normaliser_prochain():
+    cartes = Cartes(1, personnages)
+    cartes.nouveau_normalise(0.9999)
+    assert cartes[0] == personnages[-1]
