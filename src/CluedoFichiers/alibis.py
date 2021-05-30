@@ -45,3 +45,9 @@ class Alibis:
             3: [f"{pers} avait {arme}.", f"Je suis certain que {arme} était dans {lieu}."]
         }
         return switcher[self.clue_index[key]]
+
+    def all(self):
+        alis = []
+        for i in range(self.__size):
+            alis += self[i]
+        return alis

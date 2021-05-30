@@ -90,3 +90,12 @@ def test_all_complicated_piste():
         "Mademoiselle Josephine Rose avait le poignard.",
         "Je suis certain que le poignard était dans la salle de billard."
     ]
+
+
+def test_union_pistes():
+    casebook = CaseBook(3)
+    alibis = Alibis(casebook)
+    assert alibis.all() == [
+        "Mademoiselle Josephine Rose était dans la salle de billard avec le poignard.",
+        "Colonel Michael Moutarde était dans la salle de bal avec le chandelier."
+    ]
