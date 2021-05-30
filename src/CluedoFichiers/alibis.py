@@ -28,5 +28,15 @@ class Alibis:
         else:
             raise ValueError
 
+    def new_clue_index_permute(self, param):
+        if 0 <= param < 1:
+            pas = int(param * self.__size)
+            perms = list(itertools.permutations(self.clue_index))
+            self.clue_index = perms[pas]
+        else:
+            raise ValueError
+
+
+
 
 

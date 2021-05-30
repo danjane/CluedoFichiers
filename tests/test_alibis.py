@@ -40,3 +40,12 @@ def test_new_clues_normalised():
     alibis = Alibis(casebook)
     alibis.new_clue_index_normalized(0.9999)
     assert alibis.clue_index == (3, 3, 3, 3, 3, 3)
+
+
+def test_permute_clue_index():
+    casebook = CaseBook(3)
+    alibis = Alibis(casebook)
+    alibis.new_clue_index(1)
+    alibis.new_clue_index_permute(0.7)
+    assert alibis.clue_index == (1, 0)
+
