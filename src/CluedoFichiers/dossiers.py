@@ -5,6 +5,7 @@ class Dossiers:
 
     def __init__(self, path, pistes):
         self.pistes = pistes
+        self.fichier_num = 0
         if path:
             self.path = path
         else:
@@ -17,7 +18,8 @@ class Dossiers:
         os.mkdir(self.path)
 
     def plat(self):
-        pass
+        for piste in self.pistes:
+            self.fichier(piste, self.path)
 
     def nettoyage(self):
         if os.path.isfile(self.path):
@@ -33,3 +35,14 @@ class Dossiers:
                 for name in dirs:
                     os.rmdir(os.path.join(root, name))
             os.rmdir(self.path)
+
+    def fichier_name(self):
+        name = "Notes_{:02d}.txt".format(self.fichier_num)
+        self.fichier_num += 1
+        return name
+
+    def fichier(self, piste, path, name=None):
+        if not name:
+            name = self.fichier_name()
+        with open(os.path.join(path, name), 'w') as file:
+            file.write(piste)
