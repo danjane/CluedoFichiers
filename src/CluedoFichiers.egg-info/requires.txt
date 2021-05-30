@@ -1,3 +1,6 @@
 
 [tests]
-pytest
+pytest~=6.2.4
+
+CluedoFichiers~=0.0.0
+setuptools~=57.0.0
