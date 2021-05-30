@@ -3,9 +3,9 @@ from CluedoFichiers.alibis import Alibis
 import random
 
 
-def aleatoire_casebook(n=3, seed=1):
+def aleatoire_casebook(_n=3, seed=1):
     random.seed(seed)
-    _casebook = CaseBook(n)
+    _casebook = CaseBook(_n)
     _casebook.nouveau_normalise(random.random())
     alibis = Alibis(_casebook)
     alibis.new_clue_index_normalized(random.random())
