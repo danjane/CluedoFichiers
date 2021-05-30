@@ -70,3 +70,23 @@ def test_one_complicated_piste():
         "Alibi. Mademoiselle Josephine Rose était dans la salle de billard.",
         "Alibi. Mademoiselle Josephine Rose avait le poignard."
     ]
+
+
+def test_all_complicated_piste():
+    casebook = CaseBook(2)
+    alibis = Alibis(casebook)
+    alibis.new_clue_index(1)
+    assert alibis[0] == [
+        "Alibi. Mademoiselle Josephine Rose était dans la salle de billard.",
+        "Alibi. Mademoiselle Josephine Rose avait le poignard."
+    ]
+    alibis.new_clue_index(2)
+    assert alibis[0] == [
+        "Alibi. Mademoiselle Josephine Rose était dans la salle de billard.",
+        "Je suis certain que le poignard était dans la salle de billard."
+    ]
+    alibis.new_clue_index(3)
+    assert alibis[0] == [
+        "Alibi. Mademoiselle Josephine Rose avait le poignard.",
+        "Je suis certain que le poignard était dans la salle de billard."
+    ]

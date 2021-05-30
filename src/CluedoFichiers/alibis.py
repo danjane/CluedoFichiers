@@ -40,6 +40,8 @@ class Alibis:
         pers, lieu, arme = self.__casebook[key].values()
         switcher = {
             0: [f"Alibi. {pers} était dans {lieu} avec {arme}."],
-            1: [f"Alibi. {pers} était dans {lieu}.", f"Alibi. {pers} avait {arme}."]
+            1: [f"Alibi. {pers} était dans {lieu}.", f"Alibi. {pers} avait {arme}."],
+            2: [f"Alibi. {pers} était dans {lieu}.", f"Je suis certain que {arme} était dans {lieu}."],
+            3: [f"Alibi. {pers} avait {arme}.", f"Je suis certain que {arme} était dans {lieu}."]
         }
         return switcher[self.clue_index[key]]
