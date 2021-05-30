@@ -37,4 +37,5 @@ class Alibis:
             raise ValueError
 
     def __getitem__(self, key):
-        return "Alibi. Mademoiselle Josephine Rose était dans la salle de billard avec le poignard."
+        pers, lieu, arme = self.__casebook[key].values()
+        return [f"Alibi. {pers} était dans {lieu} avec {arme}."]

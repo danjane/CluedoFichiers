@@ -50,7 +50,13 @@ def test_permute_clue_index():
     assert alibis.clue_index == (1, 0)
 
 
-def test_piste():
+def test_one_piste():
     casebook = CaseBook(2)
     alibis = Alibis(casebook)
-    assert alibis[0] == "Alibi. Mademoiselle Josephine Rose était dans la salle de billard avec le poignard."
+    assert alibis[0] == ["Alibi. Mademoiselle Josephine Rose était dans la salle de billard avec le poignard."]
+
+
+def test_second_piste():
+    casebook = CaseBook(3)
+    alibis = Alibis(casebook)
+    assert alibis[1] == ["Alibi. Colonel Michael Moutarde était dans la salle de bal avec le chandelier."]
