@@ -40,6 +40,8 @@ class CaseBook:
 
     def nouveau(self, pas):
         self.personnages.nouveau(pas)
+        self.lieux.nouveau(pas)
 
     def nouveau_normalise(self, param):
         self.personnages.nouveau_normalise(param)
+        self.lieux.nouveau_normalise(param)
