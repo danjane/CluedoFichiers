@@ -21,16 +21,22 @@ def test_first_set_of_alibis():
     ]
 
 
-def test_clue_selection():
+def test_clues_selection():
     casebook = CaseBook(2)
     alibis = Alibis(casebook)
     assert alibis.clue_index == (0, )
 
 
-def test_new_clue_selection():
+def test_new_clues_selection():
     casebook = CaseBook(3)
     alibis = Alibis(casebook)
     assert alibis.clue_index == (0, 0)
     alibis.new_clue_index(1)
     assert alibis.clue_index == (0, 1)
 
+
+def test_new_clues_normalised():
+    casebook = CaseBook(7)
+    alibis = Alibis(casebook)
+    alibis.new_clue_index_normalized(0.9999)
+    assert alibis.clue_index == (3, 3, 3, 3, 3, 3)

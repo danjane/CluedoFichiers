@@ -21,5 +21,12 @@ class Alibis:
     def new_clue_index(self, pas):
         self.clue_index = self.__indices[int(pas) % len(self.__indices)]
 
+    def new_clue_index_normalized(self, param):
+        if 0 <= param < 1:
+            pas = int(param * len(self.__indices))
+            self.new_clue_index(pas)
+        else:
+            raise ValueError
+
 
 
