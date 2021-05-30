@@ -25,13 +25,13 @@ class CaseBook:
     ]
 
     armes_possibles = [
-        "poignard",
-        "chandelier",
-        "revolver",
-        "corde",
-        "clef Anglaise",
-        "poison",
-        "fer à cheval"
+        "le poignard",
+        "le chandelier",
+        "le revolver",
+        "la corde",
+        "la clef Anglaise",
+        "le poison",
+        "le fer à cheval"
     ]
 
     def __init__(self, size):

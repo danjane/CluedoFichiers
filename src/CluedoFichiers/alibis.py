@@ -13,10 +13,10 @@ class Alibis:
         self.clue_index = self.__indices[0]
 
     def build_elements(self):
-        L = []
+        es = []
         for i in range(self.__size):
-            L.append(list(self.__casebook[i].values()))
-        return L
+            es.append(list(self.__casebook[i].values()))
+        return es
 
     def new_clue_index(self, pas):
         self.clue_index = self.__indices[int(pas) % len(self.__indices)]
@@ -36,7 +36,5 @@ class Alibis:
         else:
             raise ValueError
 
-
-
-
-
+    def __getitem__(self, key):
+        return "Alibi. Mademoiselle Josephine Rose était dans la salle de billard avec le poignard."

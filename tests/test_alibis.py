@@ -17,7 +17,7 @@ def test_first_set_of_alibis():
     assert alibis.elements[0] == [
         "Mademoiselle Josephine Rose",
         "la salle de billard",
-        "poignard"
+        "le poignard"
     ]
 
 
@@ -49,3 +49,8 @@ def test_permute_clue_index():
     alibis.new_clue_index_permute(0.7)
     assert alibis.clue_index == (1, 0)
 
+
+def test_piste():
+    casebook = CaseBook(2)
+    alibis = Alibis(casebook)
+    assert alibis[0] == "Alibi. Mademoiselle Josephine Rose était dans la salle de billard avec le poignard."

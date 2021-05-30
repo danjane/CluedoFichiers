@@ -52,5 +52,5 @@ def test_deux_lieux():
 
 def test_deux_armes():
     casebook = CaseBook(2)
-    assert casebook[0]["arme"] == "poignard"
-    assert casebook[1]["arme"] == "chandelier"
+    assert casebook[0]["arme"] == "le poignard"
+    assert casebook[1]["arme"] == "le chandelier"
