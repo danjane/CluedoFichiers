@@ -24,5 +24,12 @@ class CaseBook:
         }
 
     def nouveau(self, pas):
-        self.__compteur = pas % len(self.personnages)
+        self.__compteur = int(pas) % len(self.personnages)
+
+    def nouveau_normalise(self, param):
+        if 0 <= param < 1:
+            pas = int(param * len(self.personnages))
+            self.nouveau(pas)
+        else:
+            raise ValueError
 
