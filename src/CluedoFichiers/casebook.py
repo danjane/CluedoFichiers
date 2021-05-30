@@ -1,10 +1,9 @@
-import itertools
-
+from CluedoFichiers.cartes import Cartes
 
 class CaseBook:
     """ Ensemble de personnages, lieux et armes """
 
-    personnages = [
+    personnages_possibles = [
         "Mademoiselle Josephine Rose",
         "Colonel Michael Moutarde",
         "Madame Blanche Leblanc",
@@ -16,26 +15,18 @@ class CaseBook:
 
     def __init__(self, size):
         self.size = size
-        self.__indices = list(
-            itertools.permutations(self.personnages, self.size)
-            )
-        self.__compteur = 0
+        self.personnages = Cartes(self.size, self.personnages_possibles)
 
     def __setitem__(self, key, value):
         raise NotImplementedError
 
     def __getitem__(self, key):
-        personnages = self.__indices[self.__compteur]
         return {
-            "personnage": personnages[key]
+            "personnage": self.personnages[key]
         }
 
     def nouveau(self, pas):
-        self.__compteur = int(pas) % len(self.__indices)
+        self.personnages.nouveau(pas)
 
     def nouveau_normalise(self, param):
-        if 0 <= param < 1:
-            pas = int(param * len(self.__indices))
-            self.nouveau(pas)
-        else:
-            raise ValueError
+        self.personnages.nouveau_normalise(param)
