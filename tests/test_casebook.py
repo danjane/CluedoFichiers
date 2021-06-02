@@ -54,3 +54,24 @@ def test_deux_armes():
     casebook = CaseBook(2)
     assert casebook[0]["arme"] == "le poignard"
     assert casebook[1]["arme"] == "le chandelier"
+
+
+def test_information_personnages():
+    casebook = CaseBook(2)
+    assert casebook.info_personnages() == """Les personnages suivants étaient présents:
+Mademoiselle Josephine Rose
+Colonel Michael Moutarde"""
+
+
+def test_information_lieux():
+    casebook = CaseBook(2)
+    assert casebook.info_lieux() == """Les lieux suivants étaient occupés:
+la salle de billard
+la salle de bal"""
+
+
+def test_information_armes():
+    casebook = CaseBook(2)
+    assert casebook.info_armes() == """Les armes suivants étaient présents:
+le poignard
+le chandelier"""

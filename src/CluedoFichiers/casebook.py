@@ -56,3 +56,15 @@ class CaseBook:
         self.personnages.nouveau_normalise(param[0])
         self.lieux.nouveau_normalise(param[1])
         self.armes.nouveau_normalise(param[2])
+
+    def info_personnages(self):
+        info = ["Les personnages suivants étaient présents:"] + self.personnages.all()
+        return "\n".join(info)
+
+    def info_lieux(self):
+        info = ["Les lieux suivants étaient occupés:"] + self.lieux.all()
+        return "\n".join(info)
+
+    def info_armes(self):
+        info = ["Les armes suivants étaient présents:"] + self.armes.all()
+        return "\n".join(info)
