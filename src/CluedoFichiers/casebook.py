@@ -66,5 +66,5 @@ class CaseBook:
         return "\n".join(info)
 
     def info_armes(self):
-        info = ["Les armes suivants étaient présents:"] + self.armes.all()
+        info = ["Les armes suivantes étaient présentes:"] + self.armes.all()
         return "\n".join(info)
