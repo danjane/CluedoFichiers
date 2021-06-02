@@ -72,6 +72,6 @@ la salle de bal"""
 
 def test_information_armes():
     casebook = CaseBook(2)
-    assert casebook.info_armes() == """Les armes suivants étaient présents:
+    assert casebook.info_armes() == """Les armes suivantes étaient présentes:
 le poignard
 le chandelier"""

@@ -53,13 +53,13 @@ def test_permute_clue_index():
 def test_one_piste():
     casebook = CaseBook(2)
     alibis = Alibis(casebook)
-    assert alibis[0] == ["Mademoiselle Josephine Rose était dans la salle de billard avec le poignard."]
+    assert alibis[0] == ["Alibi: Mademoiselle Josephine Rose était dans la salle de billard avec le poignard."]
 
 
 def test_second_piste():
     casebook = CaseBook(3)
     alibis = Alibis(casebook)
-    assert alibis[1] == ["Colonel Michael Moutarde était dans la salle de bal avec le chandelier."]
+    assert alibis[1] == ["Alibi: Colonel Michael Moutarde était dans la salle de bal avec le chandelier."]
 
 
 def test_one_complicated_piste():
@@ -67,8 +67,8 @@ def test_one_complicated_piste():
     alibis = Alibis(casebook)
     alibis.new_clue_index(1)
     assert alibis[0] == [
-        "Mademoiselle Josephine Rose était dans la salle de billard.",
-        "Mademoiselle Josephine Rose avait le poignard."
+        "Alibi: Mademoiselle Josephine Rose était dans la salle de billard.",
+        "Alibi: Mademoiselle Josephine Rose avait le poignard."
     ]
 
 
@@ -77,18 +77,18 @@ def test_all_complicated_piste():
     alibis = Alibis(casebook)
     alibis.new_clue_index(1)
     assert alibis[0] == [
-        "Mademoiselle Josephine Rose était dans la salle de billard.",
-        "Mademoiselle Josephine Rose avait le poignard."
+        "Alibi: Mademoiselle Josephine Rose était dans la salle de billard.",
+        "Alibi: Mademoiselle Josephine Rose avait le poignard."
     ]
     alibis.new_clue_index(2)
     assert alibis[0] == [
-        "Mademoiselle Josephine Rose était dans la salle de billard.",
-        "Je suis certain que le poignard était dans la salle de billard."
+        "Alibi: Mademoiselle Josephine Rose était dans la salle de billard.",
+        "Alibi: Je suis certain que le poignard était dans la salle de billard."
     ]
     alibis.new_clue_index(3)
     assert alibis[0] == [
-        "Mademoiselle Josephine Rose avait le poignard.",
-        "Je suis certain que le poignard était dans la salle de billard."
+        "Alibi: Mademoiselle Josephine Rose avait le poignard.",
+        "Alibi: Je suis certain que le poignard était dans la salle de billard."
     ]
 
 
@@ -96,6 +96,6 @@ def test_union_pistes():
     casebook = CaseBook(3)
     alibis = Alibis(casebook)
     assert alibis.all() == [
-        "Mademoiselle Josephine Rose était dans la salle de billard avec le poignard.",
-        "Colonel Michael Moutarde était dans la salle de bal avec le chandelier."
+        "Alibi: Mademoiselle Josephine Rose était dans la salle de billard avec le poignard.",
+        "Alibi: Colonel Michael Moutarde était dans la salle de bal avec le chandelier."
     ]
